@@ -2,7 +2,7 @@
 using Infrastructure.Entities;
 using WebDemo.Models;
 
-namespace LearnX
+namespace WebDemo
 {
     public class Mapping : Profile
     {

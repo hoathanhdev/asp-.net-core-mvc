@@ -1,0 +1,15 @@
+D:\WebDemo\Infrastructure\bin\Debug\net5.0\Infrastructure.deps.json
+D:\WebDemo\Infrastructure\bin\Debug\net5.0\Infrastructure.runtimeconfig.json
+D:\WebDemo\Infrastructure\bin\Debug\net5.0\Infrastructure.runtimeconfig.dev.json
+D:\WebDemo\Infrastructure\bin\Debug\net5.0\Infrastructure.dll
+D:\WebDemo\Infrastructure\bin\Debug\net5.0\Infrastructure.pdb
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.AssemblyReference.cache
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfoInputs.cache
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfo.cs
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\refint\Infrastructure.dll
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\Infrastructure.genruntimeconfig.cache
+D:\WebDemo\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll

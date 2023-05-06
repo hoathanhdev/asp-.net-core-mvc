@@ -2,9 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Infrastructure.EF;
+using Infrastructure.Generic;
+using Infrastructure.Repository;
+using Infrastructure.Service;
+using WebDemo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +31,22 @@ namespace WebDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<EXDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("EXDbContextConnection"), b => b.MigrationsAssembly("WebDemo")));
+
+            services.AddSingleton(new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new Mapping());
+            }).CreateMapper());
+
+            #region Services
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IUserService, UserService>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

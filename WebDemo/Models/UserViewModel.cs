@@ -11,7 +11,7 @@ namespace WebDemo.Models
         }
 
         [DisplayName("ID")]
-        public int uId { get; set; }
+        public int uID { get; set; }
 
         [DisplayName("Họ và Tên")]
         [MaxLength(125,ErrorMessage ="Họ và tên không được quá 125 kí tự")]
@@ -28,10 +28,14 @@ namespace WebDemo.Models
         [MaxLength(32, ErrorMessage = "Điện thoại không được quá 32 kí tự")]
         public int uMobile { get; set; }
 
+        [DisplayName("Email")]
+        [MaxLength(125, ErrorMessage = "Email không được quá 125 kí tự")]
+        public int uEmail { get; set; }
+
         public DateTime CreatedDate { get; set; }
 
         [DisplayName("Trang thai")]
-        public bool isActive { get; set; }
+        public bool isActived { get; set; }
 
 
     }

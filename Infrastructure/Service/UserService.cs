@@ -19,6 +19,12 @@ namespace Infrastructure.Service
     public class UserService : IUserService
     {
         private IUserRepository userRepository;
+
+        public UserService(IUserRepository userRepository)
+        {
+            this.userRepository = userRepository;
+        }
+
         public void DeleteUser(User user)
         {
             userRepository.Delete(user);
