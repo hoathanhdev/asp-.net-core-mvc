@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using WebDemo.Models;
 
-namespace learnX.Controllers
+namespace WebDemo.Controllers
 {
     public class UserController : Controller
     {

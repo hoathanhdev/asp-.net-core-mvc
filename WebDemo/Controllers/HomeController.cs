@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebDemo.Models;
 
-namespace learnX.Controllers
+namespace WebDemo.Controllers
 {
     public class HomeController : Controller
     {

@@ -22,7 +22,7 @@ namespace Infrastructure.Entities
 
         public DateTime CreatedDate { get; set; }
 
-        public bool isActive { get; set; }
+        public bool isActived { get; set; }
 
     }
 }
