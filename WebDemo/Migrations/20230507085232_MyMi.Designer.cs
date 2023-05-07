@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebDemo.Migrations
 {
     [DbContext(typeof(EXDbContext))]
-    [Migration("20230506143252_Test")]
-    partial class Test
+    [Migration("20230507085232_MyMi")]
+    partial class MyMi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,39 @@ namespace WebDemo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Infrastructure.Entities.Account", b =>
+                {
+                    b.Property<int>("aID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("aIsAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("aPassword")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("aUsername")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("isActived")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("uEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("uInformation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("aID");
+
+                    b.ToTable("wsAccount");
+                });
 
             modelBuilder.Entity("Infrastructure.Entities.User", b =>
                 {

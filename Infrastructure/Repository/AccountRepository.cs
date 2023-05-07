@@ -10,12 +10,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IAccountRepository : IRepository<Account>
     {
+
     }
-    public class UserRepository : Repository<User>, IUserRepository
+    public class AccountRepository : Repository<Account>, IAccountRepository
     {
-        public UserRepository(EXDbContext context) : base(context)
+        public AccountRepository(EXDbContext context) : base(context)
         {
         }
     }

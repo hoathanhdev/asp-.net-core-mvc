@@ -34,7 +34,7 @@ namespace WebDemo.Models
 
         public DateTime CreatedDate { get; set; }
 
-        [DisplayName("Trang thai")]
+        [DisplayName("Loại khách hàng vip")]
         public bool isActived { get; set; }
 
 

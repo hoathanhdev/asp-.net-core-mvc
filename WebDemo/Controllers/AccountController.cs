@@ -8,30 +8,30 @@ using WebDemo.Models;
 
 namespace WebDemo.Controllers
 {
-    public class UserController : Controller
+    public class AccountController : Controller
     {
-        private readonly IUserService userService;
+        private readonly IAccountService accountService;
         private readonly IMapper mapper;
-        public UserController(IUserService userService, IMapper mapper)
+        public AccountController(IAccountService accountService, IMapper mapper)
         {
-            this.userService = userService;
+            this.accountService = accountService;
             this.mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            return View(userService.GetUsers());
+            return View(accountService.GetAccounts());
         }
 
         public IActionResult AddOrEdit(int id = 0)
         {
-            UserViewModel data = new UserViewModel();
+            AccountViewModel data = new AccountViewModel();
             ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TÀI KHOẢN" : "CẬP NHẬT TÀI KHOẢN";
 
             if (id != 0)
             {
-                User res = userService.GetUser(id);
-                data = mapper.Map<UserViewModel>(res);
+                Account res = accountService.GetAccount(id);
+                data = mapper.Map<AccountViewModel>(res);
                 if (data == null)
                 {
                     return NotFound();
@@ -43,23 +43,23 @@ namespace WebDemo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddOrEdit(int id, UserViewModel data)
+        public IActionResult AddOrEdit(int id, AccountViewModel data)
         {
-            ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI KHÁCH HÀNG" : "CẬP NHẬT KHÁCH HÀNG";
+            ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TÀI KHOẢN" : "CẬP NHẬT TÀI KHOẢN";
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    User res = mapper.Map<User>(data);
+                    Account res = mapper.Map<Account>(data);
                     if (id != 0)
                     {
-                        userService.UpdateUser(res);
+                        accountService.UpdateAccount(res);
                     }
                     else
                     {
                         res.CreatedDate = DateTime.Now;
-                        userService.InsertUser(res);
+                        accountService.InsertAccount(res);
                     }
                 }
                 catch (DbUpdateConcurrencyException)
@@ -67,7 +67,7 @@ namespace WebDemo.Controllers
                     return NotFound();
                 }
 
-                return RedirectToAction("Index", "User");
+                return RedirectToAction("Index", "Account");
             }
 
             return View(data);
@@ -77,10 +77,10 @@ namespace WebDemo.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
-            User res = userService.GetUser(id);
-            userService.DeleteUser(res);
+            Account res = accountService.GetAccount(id);
+            accountService.DeleteAccount(res);
 
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index", "Account");
         }
     }
 }

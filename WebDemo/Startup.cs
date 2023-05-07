@@ -46,6 +46,13 @@ namespace WebDemo
             services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<IUserService, UserService>();
+
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddScoped<IAccountRepository, AccountRepository>();
+
+            services.AddScoped<IAccountService, AccountService>();
             #endregion
         }
 

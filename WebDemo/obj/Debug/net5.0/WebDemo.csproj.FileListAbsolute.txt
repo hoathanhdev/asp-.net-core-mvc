@@ -56,6 +56,8 @@ D:\WebDemo\WebDemo\obj\Debug\net5.0\staticwebassets\WebDemo.StaticWebAssets.Mani
 D:\WebDemo\WebDemo\obj\Debug\net5.0\WebDemo.TagHelpers.input.cache
 D:\WebDemo\WebDemo\obj\Debug\net5.0\WebDemo.TagHelpers.output.cache
 D:\WebDemo\WebDemo\obj\Debug\net5.0\WebDemo.RazorCoreGenerate.cache
+D:\WebDemo\WebDemo\obj\Debug\net5.0\Razor\Views\Account\AddOrEdit.cshtml.g.cs
+D:\WebDemo\WebDemo\obj\Debug\net5.0\Razor\Views\Account\Index.cshtml.g.cs
 D:\WebDemo\WebDemo\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 D:\WebDemo\WebDemo\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\WebDemo\WebDemo\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs

@@ -14,12 +14,13 @@ namespace Infrastructure.EF
         public EXDbContext(DbContextOptions<EXDbContext> options) : base(options)
         {
         }
-        
+
         public DbSet<User> user { get; set; }
+        public DbSet<Account> account { get; set; }
 
 
-    
-    
-    
+
+
+
     }
 }

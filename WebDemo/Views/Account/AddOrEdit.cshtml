@@ -1,4 +1,4 @@
-﻿@model UserViewModel
+﻿@model AccountViewModel
 
 @{
 }
@@ -7,50 +7,52 @@
     <div class="card">
         <div class="card-body">
             <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</p>
-            <form asp-action="AddOrEdit" asp-controller="User" asp-route-id="@Model.uID">
+            <form asp-action="AddOrEdit" asp-controller="Account" asp-route-id="@Model.aID">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="uID" value="@Model.uID" />
+                <input type="hidden" asp-for="aID" value="@Model.aID" />
                 <input type="hidden" asp-for="CreatedDate" value="@Model.CreatedDate" />
                 <div>
                     <div class="form-group mb-2">
-                        <label asp-for="uFullName" class="control-label"></label>
+                        <label asp-for="aUsername" class="control-label"></label>
                         <div class="input-group mb-2">
-                            <input asp-for="uFullName" class="form-control" placeholder="Nhập họ và tên" value="@Model.uFullName" />
+                            <input asp-for="aUsername" class="form-control" placeholder="Nhập tên tài khoản" value="@Model.aUsername" />
                         </div>
-                        <span asp-validation-for="uFullName" class="text-danger"></span>
+                        <span asp-validation-for="aUsername" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="aPassword" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="aPassword" class="form-control" placeholder="Nhập mật khẩu" value="@Model.aPassword" />
+                        </div>
+                        <span asp-validation-for="aPassword" class="text-danger"></span>
                     </div><!--end form-group-->
 
                     <div class="form-group mb-2">
                         <div class="form-check">
-                            <input asp-for="uSex" class="form-check-input" type="checkbox"
-                                   onchange="$('#uSex').val(this.checked)" value="@Model.uSex">
-                            <label asp-for="uSex" class="form-check-label"></label>
+                            <input asp-for="aIsAdmin" class="form-check-input" type="checkbox"
+                                   onchange="$('#aIsAdmin').val(this.checked)" value="@Model.aIsAdmin">
+                            <label asp-for="aIsAdmin" class="form-check-label"></label>
                         </div>
                     </div><!--end form-group-->
 
+                    
+
                     <div class="form-group mb-2">
-                        <label asp-for="uMobile" class="control-label"></label>
+                        <label asp-for="aEmail" class="control-label"></label>
                         <div class="input-group mb-2">
-                            <input asp-for="uMobile" class="form-control" placeholder="Nhập số điện thoại" value="@Model.uMobile" />
+                            <input asp-for="aEmail" class="form-control" placeholder="Nhập email" value="@Model.aEmail" />
                         </div>
-                        <span asp-validation-for="uMobile" class="text-danger"></span>
+                        <span asp-validation-for="aEmail" class="text-danger"></span>
                     </div><!--end form-group-->
 
                     <div class="form-group mb-2">
-                        <label asp-for="uEmail" class="control-label"></label>
+                        <label asp-for="aInformation" class="control-label"></label>
                         <div class="input-group mb-2">
-                            <input asp-for="uEmail" class="form-control" placeholder="Nhập email" value="@Model.uEmail" />
+                            <textarea asp-for="aInformation" class="form-control" placeholder="Nhập nội dung ghi chú" rows="3">
+                                @Model.aInformation</textarea>
                         </div>
-                        <span asp-validation-for="uEmail" class="text-danger"></span>
-                    </div><!--end form-group-->
-
-                    <div class="form-group mb-2">
-                        <label asp-for="uInformation" class="control-label"></label>
-                        <div class="input-group mb-2">
-                            <textarea asp-for="uInformation" class="form-control" placeholder="Nhập nội dung" rows="3">
-                                @Model.uInformation</textarea>
-                        </div>
-                        <span asp-validation-for="uInformation" class="text-danger"></span>
+                        <span asp-validation-for="aInformation" class="text-danger"></span>
                     </div><!--end form-group-->
 
                     <div class="form-group mb-2">
@@ -69,7 +71,7 @@
                                     <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
                                 </div>
                                 <div>
-                                    <a asp-controller="User" asp-action="Index" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                    <a asp-controller="Account" asp-action="Index" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
                                 </div>
                             </div>
                         </div>
