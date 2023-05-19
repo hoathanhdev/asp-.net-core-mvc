@@ -1,0 +1,83 @@
+﻿@model TeacherViewModel
+
+@{
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</p>
+            <form asp-action="AddOrEdit" asp-controller="Teacher" asp-route-id="@Model.MaGV">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MaGV" value="@Model.MaGV" />
+                <input type="hidden" asp-for="CreatedDate" value="@Model.CreatedDate" />
+                <div>
+                    <div class="form-group mb-2">
+                        <label asp-for="TenGV" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="TenGV" class="form-control" placeholder="Nhập họ và tên giáo viên" value="@Model.TenGV" />
+                        </div>
+                        <span asp-validation-for="TenGV" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="BoMon" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="BoMon" class="form-control" placeholder="Nhập tên bộ môn" value="@Model.BoMon" />
+                        </div>
+                        <span asp-validation-for="BoMon" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="Tuoi" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Tuoi" type="number" class="form-control" placeholder="Nhập tuổi giáo viên" value="@Model.Tuoi" />
+                        </div>
+                        <span asp-validation-for="Tuoi" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <div class="form-check">
+                            <input asp-for="IsTruongBM" class="form-check-input" type="checkbox"
+                                   onchange="$('#IsTruongBM').val(this.checked)" value="@Model.IsTruongBM">
+                            <label asp-for="IsTruongBM" class="form-check-label"></label>
+                        </div>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="DiaChi" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ" value="@Model.DiaChi" />
+                        </div>
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="LuongCoBan" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="LuongCoBan" type="number" class="form-control" placeholder="Nhập lương cơ bản" value="@Model.LuongCoBan" />
+                        </div>
+                        <span asp-validation-for="LuongCoBan" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group">
+                        <br />
+                        <div class="col-md-12 offset-md-5">
+                            <div class="d-flex">
+                                <div style="margin-right:10px;">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
+                                </div>
+                                <div>
+                                    <a asp-controller="Teacher" asp-action="Index" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> <!-- end card-->
+</div>
+
+@section scripts{
+}

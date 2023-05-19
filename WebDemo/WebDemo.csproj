@@ -22,4 +22,12 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\WebDemo\WebDemo\Controllers\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\WebDemo\WebDemo\Controllers\.editorconfig" />
+  </ItemGroup>
+
 </Project>

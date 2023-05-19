@@ -53,6 +53,14 @@ namespace WebDemo
             services.AddScoped<IAccountRepository, AccountRepository>();
 
             services.AddScoped<IAccountService, AccountService>();
+
+            services.AddScoped<IStudentRepository, StudentRepository>();
+
+            services.AddScoped<IStudentService, StudentService>();
+
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
+
+            services.AddScoped<ITeacherService, TeacherService>();
             #endregion
         }
 

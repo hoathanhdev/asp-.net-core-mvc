@@ -10,8 +10,16 @@ namespace WebDemo
         {
             CreateMap<User, UserViewModel>();
             CreateMap<UserViewModel, User>();
+
             CreateMap<Account, AccountViewModel>();
             CreateMap<AccountViewModel, Account>();
+
+            CreateMap<Student, StudentViewModel>();
+            CreateMap<StudentViewModel, Student>();
+
+            CreateMap<Teacher, TeacherViewModel>();
+            CreateMap<TeacherViewModel, Teacher>();
+
         }
     }
 }

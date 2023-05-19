@@ -18,9 +18,9 @@ namespace Infrastructure.EF
         public DbSet<User> user { get; set; }
         public DbSet<Account> account { get; set; }
 
+        public DbSet<Student> student { get; set; }
 
-
-
+        public DbSet<Teacher> teacher { get; set; }
 
     }
 }

@@ -1,0 +1,72 @@
+﻿@model StudentViewModel
+
+@{
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</p>
+            <form asp-action="AddOrEdit" asp-controller="Student" asp-route-id="@Model.MaHS">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MaHS" value="@Model.MaHS" />
+                <input type="hidden" asp-for="CreatedDate" value="@Model.CreatedDate" />
+                <div>
+                    <div class="form-group mb-2">
+                        <label asp-for="TenHS" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="TenHS" class="form-control" placeholder="Nhập họ và tên học sinh" value="@Model.TenHS" />
+                        </div>
+                        <span asp-validation-for="TenHS" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="Lop" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Lop" class="form-control" placeholder="Nhập tên lớp" value="@Model.Lop" />
+                        </div>
+                        <span asp-validation-for="Lop" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="Tuoi" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Tuoi" type="number" class="form-control" placeholder="Nhập tuổi học sinh" value="@Model.Tuoi" />
+                        </div>
+                        <span asp-validation-for="Tuoi" class="text-danger"></span>
+                    </div><!--end form-group-->
+                    <div class="form-group mb-2">
+                        <label asp-for="Khoa" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Khoa" class="form-control" placeholder="Nhập khoa" value="@Model.Khoa" />
+                        </div>
+                        <span asp-validation-for="Khoa" class="text-danger"></span>
+                    </div><!--end form-group-->
+                    <div class="form-group mb-2">
+                        <label asp-for="DiaChi" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ" value="@Model.DiaChi" />
+                        </div>
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </div><!--end form-group-->
+                    <div class="form-group">
+                        <br />
+                        <div class="col-md-12 offset-md-5">
+                            <div class="d-flex">
+                                <div style="margin-right:10px;">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
+                                </div>
+                                <div>
+                                    <a asp-controller="Student" asp-action="Index" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> <!-- end card-->
+</div>
+
+@section scripts{
+}
