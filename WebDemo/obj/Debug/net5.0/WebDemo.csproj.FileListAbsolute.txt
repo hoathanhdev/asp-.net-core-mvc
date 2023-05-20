@@ -80,3 +80,5 @@ D:\WebDemo\WebDemo\obj\Debug\net5.0\refint\WebDemo.dll
 D:\WebDemo\WebDemo\obj\Debug\net5.0\WebDemo.pdb
 D:\WebDemo\WebDemo\obj\Debug\net5.0\WebDemo.genruntimeconfig.cache
 D:\WebDemo\WebDemo\obj\Debug\net5.0\ref\WebDemo.dll
+D:\WebDemo\WebDemo\obj\Debug\net5.0\Razor\Views\Course\AddOrEdit.cshtml.g.cs
+D:\WebDemo\WebDemo\obj\Debug\net5.0\Razor\Views\Course\Index.cshtml.g.cs

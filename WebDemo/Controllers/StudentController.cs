@@ -32,6 +32,7 @@ namespace WebDemo.Controllers
             {
                 Student res = studentService.GetStudent(id);
                 data = mapper.Map<StudentViewModel>(res);
+
                 if (data == null)
                 {
                     return NotFound();

@@ -20,6 +20,8 @@ namespace WebDemo
             CreateMap<Teacher, TeacherViewModel>();
             CreateMap<TeacherViewModel, Teacher>();
 
+            CreateMap<Course, CourseViewModel>();
+            CreateMap<CourseViewModel, Course>();
         }
     }
 }

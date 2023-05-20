@@ -20,6 +20,7 @@ namespace Infrastructure.Entities
             public string DiaChi { get; set; }
             public int Tuoi { get; set; }
             public DateTime CreatedDate { get; set; }
-        }
+            public ICollection<Course> Courses { get; set; }
+    }
     }
 

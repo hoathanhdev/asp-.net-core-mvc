@@ -1,0 +1,95 @@
+﻿@model MyViewModel
+
+@{
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</p>
+            <form asp-action="AddOrEdit" asp-controller="Course" asp-route-id="@Model.Data.cID">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Data.cID" value="@Model.Data.cID" />
+                <input type="hidden" asp-for="Data.CreatedDate" value="@Model.Data.CreatedDate" />
+                <div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Data.cName" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Data.cName" class="form-control" placeholder="Nhập tên khóa học" value="@Model.Data.cName" />
+                        </div>
+                        <span asp-validation-for="Data.cName" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+                    <div class="form-group mb-2">
+                        <label asp-for="Data.cYearC" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="Data.cYearC" class="form-control" placeholder="Nhập năm học" value="@Model.Data.cYearC" />
+                        </div>
+                        <span asp-validation-for="Data.cYearC" class="text-danger"></span>
+                    </div><!--end form-group-->                
+
+                    <div class="form-group">
+                        <label asp-for="Data.MaHS" class="control-label"></label>
+                        <select id="myComboBox1" name="MaHS" onchange="updateHiddenField1()">
+                            @foreach (var item in Model.Data1)
+                            {
+                                <option asp-for="Data.MaHS" value="@item.MaHS">@item.TenHS</option>
+                            }
+                            </select>
+                        <div class="input-group mb-2">
+                        <input id="hiddenField1" asp-for="Data.MaHS" type="hidden" class="form-control" placeholder="Nhập tên tài khoản" value="@Model.Data.MaHS" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Data.MaGV" class="control-label"></label>
+                        <select id="myComboBox" name="MaGV" onchange="updateHiddenField()">
+                            @foreach (var item in Model.Data2)
+                            {
+                                <option asp-for="Data.MaGV" value="@item.MaGV">@item.TenGV</option>
+                            }
+                            </select>
+                        <div class="input-group mb-2">
+                        <input id="hiddenField" asp-for="Data.MaGV" type="hidden" class="form-control" placeholder="Nhập tên tài khoản" value="@Model.Data.MaGV" />
+                        </div>
+                    </div>
+                    
+
+                    
+                     
+
+                    <div class="form-group">
+                        <br />
+                        <div class="col-md-12 offset-md-5">
+                            <div class="d-flex">
+                                <div style="margin-right:10px;">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
+                                </div>
+                                <div>
+                                    <a asp-controller="Course" asp-action="Index" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> <!-- end card-->
+</div>
+
+@section scripts{
+}
+
+<script>
+        function updateHiddenField() {
+            var selectedValue = document.getElementById("myComboBox").value;
+            document.getElementById("hiddenField").value = selectedValue;
+        }
+
+        function updateHiddenField1() {
+            var selectedValue = document.getElementById("myComboBox1").value;
+            document.getElementById("hiddenField1").value = selectedValue;
+        }
+
+</script>

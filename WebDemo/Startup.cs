@@ -40,6 +40,9 @@ namespace WebDemo
                 mc.AddProfile(new Mapping());
             }).CreateMapper());
 
+
+            
+
             #region Services
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
@@ -61,6 +64,10 @@ namespace WebDemo
             services.AddScoped<ITeacherRepository, TeacherRepository>();
 
             services.AddScoped<ITeacherService, TeacherService>();
+
+            services.AddScoped<ICourseRepository, CourseRepository>();
+
+            services.AddScoped<ICourseService, CourseService>();
             #endregion
         }
 
@@ -79,6 +86,8 @@ namespace WebDemo
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+          
 
             app.UseRouting();
 

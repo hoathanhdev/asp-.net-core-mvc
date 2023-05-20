@@ -21,6 +21,23 @@ namespace Infrastructure.EF
         public DbSet<Student> student { get; set; }
 
         public DbSet<Teacher> teacher { get; set; }
+        public DbSet<Course> course{ get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Course>()
+                .HasOne<Teacher>(c => c.Teacher)
+                .WithMany(t => t.Courses)
+                .HasForeignKey(c => c.MaGV);
+            ;
+
+            modelBuilder.Entity<Course>()
+                .HasOne<Student>(c => c.Student)
+                .WithMany(t => t.Courses)
+                .HasForeignKey(c => c.MaHS);
+            ;
+        }
+
+       
     }
 }

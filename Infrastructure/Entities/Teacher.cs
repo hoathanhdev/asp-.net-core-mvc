@@ -21,6 +21,8 @@ namespace Infrastructure.Entities
             public int Tuoi { get; set; }
             public bool IsTruongBM { get; set; }
             public DateTime CreatedDate { get; set; }
-        }
+
+            public ICollection<Course> Courses { get; set; }
+    }
     }
 

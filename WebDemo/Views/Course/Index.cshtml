@@ -1,6 +1,4 @@
 ﻿
-
-
 <div class="row d-flex justify-content-center">
     <div class="col-12 align-self-center">
         <div class="card">
@@ -8,15 +6,15 @@
                 <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">DANH SÁCH TÀI KHOẢN</p>
                 <div class="table-responsive">
                     <div class="mb-2">
-                        <a asp-controller="Account" asp-action="AddOrEdit" class="btn btn-success text-white"><i class="fas fa-random"></i> Thêm mới</a>
+                        <a asp-controller="Course" asp-action="AddOrEdit" class="btn btn-success text-white"><i class="fas fa-random"></i> Thêm mới</a>
                     </div>
                     <table id="basic-datatable" class="table table-hover table-centered dt-responsive nowrap w-100 mb-0">
                         <thead>
                             <tr>
-                                <th>UserName</th>
-                                <th>Password</th>
-                                <th>Quản trị viên</th>
-                                <th>Email</th>
+                                <th>Course Name</th>
+                                <th>Năm học</th>
+                                <th>Mã HS</th>
+                                <th>Mã GV</th>
                                 <th>Trạng thái hoạt động</th>
                                 <th></th>
                             </tr>
@@ -25,17 +23,17 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.aUsername</td>
-                                    <td>@item.aPassword</td>
-                                    <td>@(item.aIsAdmin ? "YES" : "NO")</td>
-                                    <td>@item.aEmail</td>
+                                    <td>@item.cName</td>
+                                    <td>@item.cYearC</td>
+                                    <td>@item.MaHS</td>
+                                    <td>@item.MaGV</td>
                                     <td>@(item.isActived ? "ĐANG HOẠT ĐỘNG" : "BỊ KHÓA")</td>
                                     <td>
-                                        <a asp-controller="Account" asp-action="AddOrEdit" asp-route-id="@item.aID" class="btn btn-info text-white">
+                                        <a asp-controller="Course" asp-action="AddOrEdit" asp-route-id="@item.cID" class="btn btn-info text-white">
                                             <i class="fas fa-edit text-white"></i> Edit
                                         </a>
 
-                                        <form asp-action="Delete" asp-route-id="@item.aID" onsubmit="return jQueryAjaxDelete(this)" class="d-inline">
+                                        <form asp-action="Delete" asp-route-id="@item.cID" onsubmit="return jQueryAjaxDelete(this)" class="d-inline">
                                             <button class="btn btn-danger" type="submit">
                                                 <i class="fas fa-trash-alt text-white"></i> Delete
                                             </button>

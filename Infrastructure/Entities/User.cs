@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Entities
 {
-    [Table("wsUser")]
+    [Table("User")]
     public class User
     {
         [Key]
